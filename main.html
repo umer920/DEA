@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Inovidio</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- script references -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+    <script src="js/DBConnecter.js"></script>
+    <script src="js/DBObjects/language.js"></script>
+    <script src="js/DBObjects/class.js"></script>
+    <script src="js/DBObjects/subject.js"></script>
+    <script src="js/DBObjects/chapter.js"></script>
+    <script src="js/DBObjects/topic.js"></script>
+
+<!--		<link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles1.css" rel="stylesheet">
+	</head>
+	<body>
+<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Inovodio</a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-collapsible">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#section1">Add a Question</a></li>
+        <li><a href="#section2">Add a Language</a></li>
+        <li><a href="#section3">Add a Class</a></li>
+        <li><a href="#section4">Add a Subject</a></li>
+        <li><a href="#section5">Add a Chapter</a></li>
+        <li><a href="#section6">Add a Topic</a></li>
+        <li><a href="#section7">Search</a></li>
+        <li><a href="#section8">Import/Export</a></li>  
+        <li>&nbsp;</li>
+      </ul>
+    </div>      
+    </div>
+
+  </div>
+</nav>
+
+<section class="container-fluid odd formsSwitch" id="section1">
+  	<h3 class="text-center">Add a Question</h3>
+
+    <div class="row container">
+    <div class="col-md-2">
+      <select class="form-control" id="qlanguage" onclick="loadLanguages('qlanguage');">
+      <option value="Select Language">Select Language</option>
+      </select>
+    </div>
+
+    <div class="col-md-2">
+      <select class="form-control" id="qclass" onchange="loadSubjects('qclass','qsubject')">
+      </select>
+    </div>
+
+    <div class="col-md-2">
+      <select class="form-control" id="qsubject" onchange="loadChapters('qclass','qsubject','qchapter')">
+      </select>
+    </div>
+
+    <div class="col-md-2">
+      <select class="form-control" id="qchapter" onchange="loadTopics('qclass','qsubject','qchapter','qtopic')">
+      </select>
+    </div>
+
+    <div class="col-md-2">
+      <select class="form-control" id="qtopic">
+      </select>
+    </div>
+
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Save Configuration</button>
+    </div>
+
+    <br>
+
+    <div class="col-md-4">
+      <select class="form-control">
+      <option value="one">Select saved configuration</option>
+        <option value="one">Configuration One</option>
+        <option value="two">Configuration Two</option>
+        <option value="three">Configuration Three</option>
+        <option value="four">Configuration Four</option>
+        <option value="five">Configuration Five</option>
+      </select>
+    </div>
+
+    <br><br><br><br>
+
+    <form role="form" class="col-md-9">
+    
+    
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-3 control-label">Question Statement :</label>
+    <div class="col-sm-8">
+      <textarea class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-3 control-label">Number of options :</label>
+      <div class="col-sm-2">
+        
+      <select class="form-control">
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+        <option value="four">4</option>
+      </select>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-3 control-label">Option 1 :</label>
+      <div class="col-sm-8">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="option1">
+      </div>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-3 control-label">Option 2 :</label>
+      <div class="col-sm-8">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="option2">
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-3 control-label">Option 3 :</label>
+      <div class="col-sm-8">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="option3">
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-3 control-label">Option 4 :</label>
+      <div class="col-sm-8">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="option4">
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-3 control-label">Correct Option :</label>
+      <div class="col-sm-2">
+        
+      <select class="form-control">
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+        <option value="four">4</option>
+      </select>
+      </div>
+    </div>    
+
+    <br><br>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-10">
+      <button type="button" class="btn btn-success">Save</button>
+    </div>
+  </div>
+
+  </form>
+
+
+</section>
+
+<section class="container-fluid even formsSwitch" id="section2">
+  <h3 class="text-center">Add a Language</h3>
+  <br><br><br>
+
+  <form role="form" class="col-sm-offset-1 col-md-9">
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Name :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="lname" placeholder="Language Name" required>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Direction :</label>
+      <div class="col-sm-9">
+        
+      <select class="form-control" id="ldir">
+        <option value="ltr">Left to Right</option>
+        <option value="rtl">Right to Left</option>
+      </select>
+      </div>
+    </div>
+    <br><br>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button  onclick="addlanguage()" type="button" class="btn btn-success">Save</button>
+    </div>
+  </div>
+
+  </form>
+
+</section>
+
+<section class="container-fluid odd" id="section3">
+<h3 class="text-center">Add a Class</h3>
+<br><br><br>
+
+<form role="form" class="col-sm-offset-1 col-md-9">
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Name :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="cname" placeholder="Class Name" required>
+      </div>
+    </div>
+    <br><br>
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Description :</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" id="cdesc" rows="3"></textarea>
+      </div>
+    </div>
+
+    <br><br><br><br>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button onclick="addclass()" type="button" class="btn btn-success">Save</button>
+    </div>
+  </div>
+</form>
+  
+</section>
+
+<section class="container-fluid even" id="section4">
+  <h3 class="text-center">Add a Subject</h3>
+  <br><br><br>
+
+  <form role="form" class="col-sm-offset-1 col-md-9">
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Name :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="sname" placeholder="Subject Name" onclick="loadClasses('classname')" required>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Class :</label>
+      <div class="col-sm-9">
+        
+      <select id="classname" class="form-control">
+        
+      </select>
+      </div>
+    </div>
+    <br><br>
+
+      
+    <br><br>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button onclick="addsubject()" type="button" class="btn btn-success">Save</button>
+    </div>
+  </div>
+
+  </form>
+	
+</section>
+
+
+<section class="container-fluid odd" id="section5">
+  <h3 class="text-center">Add a Chapter</h3>
+  <br><br><br>
+
+  <form role="form" class="col-sm-offset-1 col-md-9">
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Name :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="chapname" placeholder="Chapter Name" onclick="loadClasses('chapclass')" required>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Class :</label>
+      <div class="col-sm-9">
+      <select id="chapclass" class="form-control" onchange="loadSubjects('chapclass','chapsubject')">
+      </select>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Subject :</label>
+      <div class="col-sm-9">
+        
+      <select id="chapsubject" class="form-control">
+      </select>
+      </div>
+    </div>
+    <br><br>
+
+      
+    <br><br>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button onclick="addchapter()" type="button" class="btn btn-success">Save</button>
+    </div>
+  </div>
+
+  </form>
+</section>
+
+<section class="container-fluid even" id="section6">
+  <h3 class="text-center">Add a Topic</h3>
+  <br><br><br>
+
+  <form role="form" class="col-sm-offset-1 col-md-9">
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Name :</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="tname" placeholder="Topic Name" onclick="loadClasses('topic_class')" required>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Class :</label>
+      <div class="col-sm-9">
+        
+      <select id="topic_class" class="form-control" onchange="loadSubjects('topic_class','topic_subject')">
+      </select>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Subject :</label>
+      <div class="col-sm-9">
+        
+      <select id="topic_subject" class="form-control" onchange="loadChapters('topic_class','topic_subject','topic_chapter')">
+      </select>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Chapter :</label>
+      <div class="col-sm-9">
+        
+      <select id="topic_chapter" class="form-control">
+      </select>
+      </div>
+    </div>
+
+      
+    <br><br>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button onclick="addtopic()" type="button" class="btn btn-success">Save</button>
+    </div>
+  </div>
+
+  </form>
+</section>
+
+<section class="container-fluid odd" id="section7">
+  <span class="glyphicon glyphicon-search"></span>
+  <br><br><br>	
+</section>
+
+<section class="container-fluid even" id="section8">
+  <h1 class="text-center">Import Export Form</h1>
+</section>
+
+<footer id="footer">
+  <div class="container-fluid">
+    <div class="row">    
+      <div class="col-xs-6 col-sm-6 col-md-3 column">          
+          <h4>Information</h4>
+          <ul class="nav">
+            <li><a href="about-us.html">Products</a></li>
+            <li><a href="about-us.html">Services</a></li>
+            <li><a href="about-us.html">Benefits</a></li>
+            <li><a href="elements.html">Developers</a></li>
+          </ul> 
+        </div>
+      <div class="col-xs-6 col-md-3 column">          
+          <h4>Follow Us</h4>
+          <ul class="nav">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Google+</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul> 
+      </div>
+      <div class="col-xs-6 col-md-3 column">          
+          <h4>Contact Us</h4>
+          <ul class="nav">
+            <li><a href="#">Email</a></li>
+            <li><a href="#">Headquarters</a></li>
+            <li><a href="#">Management</a></li>
+            <li><a href="#">Support</a></li>
+          </ul> 
+      </div>
+      <div class="col-xs-6 col-md-3 column">          
+          <h4>Customer Service</h4>
+          <ul class="nav">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Delivery Information</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul> 
+      </div>
+    </div><!--/row-->
+  </div>
+</footer>
+	</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" class="col-sm-offset-1 col-md-9">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Configuration Name">
+            </div>
+          </div>
+          <br><br>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>
