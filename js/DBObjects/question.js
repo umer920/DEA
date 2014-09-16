@@ -1,7 +1,7 @@
 function addquestion() {
 
 	
-	var name = document.getElementById("cname").value;
+	var stmnt = document.getElementById("statement").value;
 	var desc = document.getElementById("cdesc").value;
 
         if(!name)
