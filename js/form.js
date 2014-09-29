@@ -38,7 +38,7 @@ var y = document.createElement("INPUT");
 y.setAttribute("type", "text");
 y.setAttribute("placeholder", "Option"+i);
 var g = document.createElement("IMG");
-g.setAttribute("src", "delete.png");
+g.setAttribute("src", "img/del.png");
 y.setAttribute("Name", "textelement_" + i);
 r.appendChild(y);
 g.setAttribute("onclick", "removeElement('qoptions','id_" + i + "')");

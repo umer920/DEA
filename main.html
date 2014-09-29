@@ -59,6 +59,8 @@
 <section class="container-fluid odd formsSwitch" id="section1">
   	<h3 class="text-center">Add a Question</h3>
 
+<div class="col-sm-5">
+
     <div class="row container">
     <div class="col-md-2">
       <select class="form-control" id="qlanguage" onclick="loadLanguages('qlanguage');">
@@ -91,16 +93,7 @@
 
     <br>
 
-    <div class="col-md-4">
-      <select class="form-control">
-      <option value="one">Select saved configuration</option>
-        <option value="one">Configuration One</option>
-        <option value="two">Configuration Two</option>
-        <option value="three">Configuration Three</option>
-        <option value="four">Configuration Four</option>
-        <option value="five">Configuration Five</option>
-      </select>
-    </div>
+    
 
     <br><br><br><br>
 
@@ -111,6 +104,7 @@
     <label for="inputEmail3" class="col-sm-3 control-label">Question Statement :</label>
     <div class="col-sm-8">
       <textarea class="form-control" rows="3"></textarea>
+      <input onchange="AddField()" type="text" class="form-control" id="" placeholder="Language Name" required>
       </div>
     </div>
 
@@ -118,13 +112,17 @@
 
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-3 control-label">Number of options :</label>
-      <div class="col-sm-2">
+
+    </div>
 
     <br><br>
-    <button type="button" onclick="AddField()" class="btn btn-success btn-small">Add Option</button>
 
-    <div class="form-group" id="qoptions">
+    <button type="button" onclick="AddField()" class="btn btn-success btn-small col-sm-offset-3">Add Option</button>
+
+    <div class="form-group col-sm-offset-3" id="qoptions">
     </div>
+    
+
     <br><br>
 
     <div class="form-group">
@@ -149,6 +147,7 @@
 
   </form>
 
+</div>
 
 </section>
 
