@@ -1,7 +1,11 @@
 function addquestion() {
 
 	
+<<<<<<< HEAD
 	var name = document.getElementById("cname").value;
+=======
+	var stmnt = document.getElementById("statement").value;
+>>>>>>> 7bed89d4f14fc21d49155e46c80c554ab012e6e5
 	var desc = document.getElementById("cdesc").value;
 
         if(!name)

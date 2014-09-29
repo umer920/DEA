@@ -18,6 +18,7 @@ $('a[href*=#]:not([href=#])').click(function() {
       }
     }
 });
+<<<<<<< HEAD
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function exportTableToCSV($table, filename) {
 
@@ -110,6 +111,9 @@ $('a[href*=#]:not([href=#])').click(function() {
 
         request.send();
     });
+=======
+
+>>>>>>> 7bed89d4f14fc21d49155e46c80c554ab012e6e5
 });
 
 function addOption(selectbox,text,value )

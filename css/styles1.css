@@ -114,7 +114,11 @@ footer .nav>li>a {
 footer .nav>li>a:hover {
     background-color:transparent;
 	color:#fff;
+<<<<<<< HEAD
 }
 a.export, a.export:visited {
 
 }
+=======
+}
+>>>>>>> 7bed89d4f14fc21d49155e46c80c554ab012e6e5
