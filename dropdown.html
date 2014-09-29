@@ -1,0 +1,28 @@
+<body  onLoad="addOption_list()";>
+<FORM name="drop_list" action="yourpage.php" method="POST" >
+		<SELECT  NAME="Month_list">
+<Option value="" >Month list</option>
+</SELECT>
+</form>
+</body>
+
+<script>
+var month = new Array("January","February","March","April","May","June",
+"July","August","September","October","November","December");
+month = new Array();
+month.push("another");
+
+function addOption_list()
+{
+	for (var i=0; i < month.length;++i){
+addOption(document.drop_list.Month_list, month[i], month[i]);
+}
+}
+
+function addOption(selectbox,text,value )
+{var optn = document.createElement("OPTION");
+optn.text = text;
+optn.value = value;
+selectbox.options.add(optn);
+}
+</script>
